@@ -8,9 +8,9 @@ const MyContract = artifacts.require('MyContract')
 
 const oracleAddress =
   process.env.TRUFFLE_CL_BOX_ORACLE_ADDRESS ||
-  '0xc99B3D447826532722E41bc36e644ba3479E4365'
+  '0xa6083a2cffc4236153b0fa332548d1ebdb19be2c'
 const jobId =
-  process.env.TRUFFLE_CL_BOX_JOB_ID || '3cff0a3524694ff8834bda9cf9c779a1'
+  process.env.TRUFFLE_CL_BOX_JOB_ID || 'caaf5d07307d417ebd3c0fcb82632ed6'
 const payment = process.env.TRUFFLE_CL_BOX_PAYMENT || '1000000000000000000'
 const url =
   process.env.TRUFFLE_CL_BOX_URL ||

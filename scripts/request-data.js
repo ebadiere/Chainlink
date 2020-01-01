@@ -10,17 +10,17 @@ const oracleAddress =
   process.env.TRUFFLE_CL_BOX_ORACLE_ADDRESS ||
   '0xa6083a2cffc4236153b0fa332548d1ebdb19be2c'
 const jobId =
-  process.env.TRUFFLE_CL_BOX_JOB_ID || 'caaf5d07307d417ebd3c0fcb82632ed6'
-const payment = process.env.TRUFFLE_CL_BOX_PAYMENT || '1000000000000000000'
+  process.env.TRUFFLE_CL_BOX_JOB_ID || '0b5c5b870caa44ce9a71db9ff12295fa'
+const payment = process.env.TRUFFLE_CL_BOX_PAYMENT || '1000000000000000001'
 const url =
-  process.env.TRUFFLE_CL_BOX_URL ||
-  'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD'
-const path = process.env.TRUFFLE_CL_BOX_JSON_PATH || 'USD'
+  process.env.TRUFFLE_CL_BOX_URL || 'http://quandl:6221/goldspot'
+const path = process.env.TRUFFLE_CL_BOX_JSON_PATH || 'goldspot'
 const times = process.env.TRUFFLE_CL_BOX_TIMES || '100'
 
 module.exports = async callback => {
   const mc = await MyContract.deployed()
   console.log('Creating request on contract:', mc.address)
+  console.log('Payment:', payment)
   const tx = await mc.createRequestTo(
     oracleAddress,
     web3.utils.toHex(jobId),

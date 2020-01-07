@@ -10,10 +10,10 @@ const oracleAddress =
   process.env.TRUFFLE_CL_BOX_ORACLE_ADDRESS ||
   '0xa6083a2cffc4236153b0fa332548d1ebdb19be2c'
 const jobId =
-  process.env.TRUFFLE_CL_BOX_JOB_ID || '0b5c5b870caa44ce9a71db9ff12295fa'
+  process.env.TRUFFLE_CL_BOX_JOB_ID || 'e81eaec2166d4776bc283e6a87da8c2c'
 const payment = process.env.TRUFFLE_CL_BOX_PAYMENT || '1000000000000000001'
 const url =
-  process.env.TRUFFLE_CL_BOX_URL || 'http://quandl:6221/goldspot'
+  process.env.TRUFFLE_CL_BOX_URL || 'http://adapter:6221/goldspot'
 const path = process.env.TRUFFLE_CL_BOX_JSON_PATH || 'goldspot'
 const times = process.env.TRUFFLE_CL_BOX_TIMES || '100'
 

@@ -3,10 +3,10 @@ const h = require('chainlink').helpers
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { expectRevert, time } = require('openzeppelin-test-helpers')
 
-contract('MyContract', accounts => {
+contract('SpotContract', accounts => {
   const LinkToken = artifacts.require('LinkToken.sol')
   const Oracle = artifacts.require('Oracle.sol')
-  const MyContract = artifacts.require('MyContract.sol')
+  const SpotContract = artifacts.require('SpotContract.sol')
 
   const defaultAccount = accounts[0]
   const oracleNode = accounts[1]
@@ -32,7 +32,7 @@ contract('MyContract', accounts => {
   beforeEach(async () => {
     link = await LinkToken.new()
     oc = await Oracle.new(link.address, { from: defaultAccount })
-    cc = await MyContract.new(link.address, { from: consumer })
+    cc = await SpotContract.new(link.address, { from: consumer })
     await oc.setFulfillmentPermission(oracleNode, true, {
       from: defaultAccount,
     })

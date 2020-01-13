@@ -1,4 +1,4 @@
-const MyContract = artifacts.require('MyContract')
+const SpotContract = artifacts.require('SpotContract')
 
 /*
   This script allows for a Chainlink request to be created from
@@ -10,7 +10,7 @@ const oracleAddress =
   process.env.TRUFFLE_CL_BOX_ORACLE_ADDRESS ||
   '0xa6083a2cffc4236153b0fa332548d1ebdb19be2c'
 const jobId =
-  process.env.TRUFFLE_CL_BOX_JOB_ID || 'e81eaec2166d4776bc283e6a87da8c2c'
+  process.env.TRUFFLE_CL_BOX_JOB_ID || '355df55705774d4992b21a623e110009'
 const payment = process.env.TRUFFLE_CL_BOX_PAYMENT || '1000000000000000001'
 const url =
   process.env.TRUFFLE_CL_BOX_URL || 'http://adapter:6221/goldspot'
@@ -18,7 +18,7 @@ const path = process.env.TRUFFLE_CL_BOX_JSON_PATH || 'goldspot'
 const times = process.env.TRUFFLE_CL_BOX_TIMES || '100'
 
 module.exports = async callback => {
-  const mc = await MyContract.deployed()
+  const mc = await SpotContract.deployed()
   console.log('Creating request on contract:', mc.address)
   console.log('Payment:', payment)
   const tx = await mc.createRequestTo(

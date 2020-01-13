@@ -4,12 +4,12 @@ import "chainlink/contracts/ChainlinkClient.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /**
- * @title MyContract is an example contract which requests data from
+ * @title SpotContract is an example contract which requests data from
  * the Chainlink network
  * @dev This contract is designed to work on multiple networks, including
  * local test networks
  */
-contract MyContract is ChainlinkClient, Ownable {
+contract SpotContract is ChainlinkClient, Ownable {
   uint256 public data;
 
   /**

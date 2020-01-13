@@ -1,4 +1,4 @@
-const MyContract = artifacts.require('MyContract')
+const SpotContract = artifacts.require('SpotContract')
 const LinkToken = artifacts.require('LinkToken')
 
 /*
@@ -11,7 +11,7 @@ const LinkToken = artifacts.require('LinkToken')
 const payment = process.env.TRUFFLE_CL_BOX_PAYMENT || '1000000000000000000'
 
 module.exports = async callback => {
-  const mc = await MyContract.deployed()
+  const mc = await SpotContract.deployed()
   const tokenAddress = await mc.getChainlinkToken()
   const token = await LinkToken.at(tokenAddress)
   console.log('Funding contract:', mc.address)

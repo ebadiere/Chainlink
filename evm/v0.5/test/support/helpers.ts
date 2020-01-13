@@ -156,7 +156,7 @@ export const isByteRepresentation = (h: any): boolean => {
 export const getEvents = (contract: any): Promise<any[]> =>
   new Promise((resolve, reject) =>
     contract
-      .getPastEvents('allEvents', { fromBlock: 1 }) // https://ethereum.stackexchange.com/questions/71307/mycontract-getpasteventsallevents-returns-empty-array
+      .getPastEvents('allEvents', { fromBlock: 1 }) // https://ethereum.stackexchange.com/questions/71307/SpotContract-getpasteventsallevents-returns-empty-array
       .then((events: any) => resolve(events))
       .catch((error: any) => reject(error)),
   )
